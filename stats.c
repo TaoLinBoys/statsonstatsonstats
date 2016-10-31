@@ -13,9 +13,11 @@ int main(){
     return 0;
   }
 
-  printf("file size: %ld bytes\n", buf.st_size);
+  printf("file size: %ldB\n", buf.st_size);
+  printf("\t   %lfKB\n", buf.st_size/1000.0);
+  printf("\t   %lfMB\n", buf.st_size/1000000.0);
+  printf("\t   %lfGB\n", buf.st_size/1000000000.0);
   
-  //i looked at my friends work for this but i have no idea how this works
   printf("permissions: %o\n", buf.st_mode & 0777);
 
   //gmtime takes in the pointer to time which is st_atime and returns a struct
